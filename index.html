@@ -17,13 +17,29 @@
 		<script src="js/jquery.scrollgress.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
+
+		<!-- bxSlider Javascript file -->
+		<script src="js/jquery.bxslider.min.js"></script>
+
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-wide.css" />
 			<link rel="stylesheet" href="css/style-normal.css" />
+			<!-- bxSlider CSS file -->
+			<link rel="stylesheet" href="css/jquery.bxslider.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.bxslider').bxSlider({
+				  pagerCustom: '#bx-pager',
+				  controls: false
+				});
+			});
+		</script>
+
 	</head>
 	<body>
 
@@ -159,6 +175,19 @@
 						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
 					</header>
 				</div>
+
+				<ul class="bxslider">
+				  <li><img src="images/intro.jpg" /></li>
+				  <li><img src="images/one.jpg" /></li>
+				  <li><img src="images/two.jpg" /></li>
+				</ul>
+
+				<div id="bx-pager">
+				  <a data-slide-index="0" href=""><img src="images/thumbs/01.jpg" /></a>
+				  <a data-slide-index="1" href=""><img src="images/thumbs/02.jpg" /></a>
+				  <a data-slide-index="2" href=""><img src="images/thumbs/03.jpg" /></a>
+				</div>
+
 				<a href="#contact" class="button style2 down anchored">Next</a>
 			</section>
 			
