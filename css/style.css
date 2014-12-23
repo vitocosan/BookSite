@@ -679,6 +679,10 @@
 		#logo a {
 			font-size: 1.25em;
 		}
+
+		#logo img{
+			height: 2.5em;
+		}
 	
 	#nav {
 		position: absolute;
@@ -722,7 +726,7 @@
 /*********************************************************************************/
 
 	#intro {
-		background: url('images/overlay.png'), url('../images/intro.jpg');
+		background: url('images/overlay.png'), url('../images/acuarelas/acuarela2.jpg');
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
@@ -745,6 +749,10 @@
 		text-align: left;
 	}
 
+	.justify_text{
+		text-align:	justify;
+	}
+
 /*********************************************************************************/
 /* Two                                                                           */
 /*********************************************************************************/
@@ -756,6 +764,7 @@
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;*/
 	}
+
 
 /*********************************************************************************/
 /* Work                                                                          */
@@ -810,17 +819,46 @@
 					top: 7em;
 				}
 
+		#work .row img{
+			height: 100%;
+			width: 100%;
+		}
+
+		#work .autores{
+			text-align: left;
+		}
+
+/*********************************************************************************/
+/* Acuarelas                                                                           */
+/*********************************************************************************/
+
+	#acuarelas {
+		background-color: #EDECE7;
+	}
+
+	.img_peque{
+		height: 2em;
+		width: 2em;
+	}
+
+	.img_big{
+		height: 10em;
+		width: 8em;
+	}
+
 /*********************************************************************************/
 /* Noticias                                                                           */
 /*********************************************************************************/
 
 	#noticias {
-		background-color: #EDECE7;
+		background-color: #FFF;
 		/*background: url('images/overlay.png'), url('../images/two.jpg');
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;*/
 	}
+
+
 			
 /*********************************************************************************/
 /* Contact                                                                       */
