@@ -753,6 +753,10 @@
 		text-align:	justify;
 	}
 
+	.interlineado_s{
+		line-height: normal;
+	}
+
 /*********************************************************************************/
 /* Two                                                                           */
 /*********************************************************************************/
@@ -763,6 +767,13 @@
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;*/
+	}
+
+	.img_back{
+		background-image: url('../images/indice_background.png');
+		background-repeat: repeat-x;
+		height: 3em;
+		/*background-size: 100% 100%;*/
 	}
 
 
@@ -858,6 +869,11 @@
 		background-position: top left, center center;*/
 	}
 
+	#noticias .row img{
+			height: 100%;
+			width: 100%;
+		}
+
 
 			
 /*********************************************************************************/
@@ -892,6 +908,11 @@
 			#contact.inactive .box {
 				bottom: -30em;
 			}
+
+		#contact .row img{
+			height: 100%;
+			width: 100%;
+		}
 
 /*********************************************************************************/
 /* Footer                                                                        */
