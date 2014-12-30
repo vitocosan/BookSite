@@ -497,16 +497,18 @@
 
 			.main.style1 {
 				text-align: center;
-				padding: 10em 0 10em 0;
+				/*padding: 10em 0 10em 0;*/
 			}
 
 				.main.style1 h2 {
-					font-size: 4.25em;
+					font-size: 3.25em;
 					line-height: 1em;
 					letter-spacing: -4px;
 				}
 
 				.main.style1 .content {
+					position: relative;
+    				top: -200px;
 					opacity: 1.0;
 
 					-moz-transition: all 1s ease;
@@ -758,7 +760,7 @@
 
 	#intro {
 		background: url('images/overlay.png'), url('../images/acuarelas/portada.jpg');
-		background-size: 256px 256px, cover;
+		background-size: 100% 100%;
 		background-attachment: fixed, fixed;
 		background-position: top left, bottom center;
 		background-repeat: repeat, no-repeat;
