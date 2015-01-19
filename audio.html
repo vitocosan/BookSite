@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<!--
+	Big Picture by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ecos de las palabras de la Tierra</title>
+
+		<style>
+		p { clear: both; }
+
+		.audiojs { height: 22px; background: #404040;
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bbb), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));
+			background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);
+			-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+			-o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+		}
+		.audiojs .play-pause { width: 20px; height: 20px; padding: 0px 8px 0px 0px; }
+		.audiojs p { width: 25px; height: 20px; margin: -3px 0px 0px -1px; }
+		.audiojs .scrubber { background: #5a5a5a; width: 310px; height: 10px; margin: 5px; }
+		.audiojs .progress { height: 10px; width: 0px; background: #ccc;
+			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
+				background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%);
+		}
+		.audiojs .loaded { height: 10px; background: #000;
+				background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
+				background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%);
+		}
+		.audiojs .time { float: left; height: 25px; line-height: 25px; }
+		.audiojs .error-message { height: 24px;line-height: 24px; }
+		</style>
+
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/audiojs/audio.min.js"></script>
+
+		<!-- bxSlider Javascript file -->
+		<script src="js/jquery.bxslider.min.js"></script>
+
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+			<link rel="stylesheet" href="css/style-normal.css" />
+			<!-- bxSlider CSS file -->
+			<link rel="stylesheet" href="css/jquery.bxslider.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script>
+			audiojs.events.ready(function() {
+				var as = audiojs.createAll();
+				/*var audios = document.getElementsByTagName('audio');
+				var player = audiojs.create( audios[0], {
+					play: function() {
+						changeText("Audio is Playing"); // change text to "Audio is Playing"
+					},
+					pause: function() {
+						changeText("Audio is Paused"); // change text to "Audio is Paused"
+					}
+				});*/
+			});
+
+			function changeText(newtext) {
+				var span = document.getElementById('texto');
+				while( span.firstChild ) span.removeChild( span.firstChild );
+				span.appendChild( document.createTextNode(newtext) );
+			}
+		</script>
+
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<!-- Logo -->
+					<h1 id="logo"><a href="index.html"><img src="images/logo_gris.png"> </a></h1>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="index.html#one">Presentaci&oacute;n</a></li>
+							<li><a href="index.html#two">Contenido</a></li>
+							<li><a href="index.html#work">Formato</a></li>
+							<li><a href="index.html#noticias">Noticias</a></li>
+							<li><a href="index.html#contact">Contacto</a></li>
+						</ul>
+					</nav>
+			</header>
+
+			<section id="one" class="main style4 primary">
+				<div class="content container">
+					<header>
+						<h2>Audio</h2>
+					</header>
+					<div class="row">
+						<div class="6u left_text">
+							<h3 class="text_gray">Pistas</h3>
+							<br />
+							<ul>
+								<li>Pista 1 <audio src="mp3/intro.mp3" preload="auto" /></li>
+								<li>Pista 2 <audio src="mp3/intro.mp3" preload="auto" /></li>
+								<li>Pista 3 <audio src="mp3/intro.mp3" preload="auto" /></li>
+								<li>Pista 4 <audio src="mp3/intro.mp3" preload="auto" /></li>
+								<li>Pista 5 <audio src="mp3/intro.mp3" preload="auto" /></li>
+								<li>Pista 6 <audio src="mp3/intro.mp3" preload="auto" /></li>
+							</ul>
+
+							<p id="texto">TEXTO A CAMBIAR</p>
+						</div>
+						<div class="6u">
+							<img src="images/audio/ko.JPG" class="img_audio" />
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+
+				<!-- Icons
+					<ul class="actions">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+				-->
+				<!-- Menu -->
+					<ul class="menu">
+						<li>&copy; vitocosan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</footer>
+
+	</body>
+</html>

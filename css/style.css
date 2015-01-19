@@ -583,7 +583,7 @@
 
 			.main.style3 {
 				text-align: center;
-				padding: 6em 0 6em 0;
+				padding: 5em 0 4em 0;
 			}
 
 				.main.style3 .content {
@@ -648,7 +648,7 @@
 
 	/*bxslider*/
 	.image-fit{
-		width:800px; 
+		width:800px;
 		height:400px;
 		margin:auto;
 		display:block;
@@ -754,6 +754,7 @@
 		font-weight: 900;
 	}
 
+
 /*********************************************************************************/
 /* Intro                                                                         */
 /*********************************************************************************/
@@ -794,6 +795,11 @@
 		line-height: 1.6;
 	}
 
+	.img_audio{
+		height: 100%;
+		width: 100%;
+	}
+
 /*********************************************************************************/
 /* Two                                                                           */
 /*********************************************************************************/
@@ -812,6 +818,13 @@
 		height: 3em;
 		/*background-size: 100% 100%;*/
 	}
+
+	.img_indice{
+		background-image: url('../images/contenido/motifs.png');
+		background-repeat: repeat-x;
+		height: 5em;
+	}
+
 
 	.text_gray{
 		color: #AAA;
@@ -833,6 +846,10 @@
 
 	#work {
 		background-color: #FFF;
+	}
+
+	#work header{
+		text-align: left;
 	}
 
 		#work .row.images {
