@@ -50,7 +50,7 @@
 		}
 
 	h2 {
-		font-size: 2.25em;
+		font-size: 1.55em;
 		letter-spacing: -2px;
 		line-height: 1.25em;
 	}
@@ -65,7 +65,7 @@
 	}
 
 	a {
-		color: #98c593;
+		color: #39454B;
 
 		-moz-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -583,7 +583,7 @@
 
 			.main.style3 {
 				text-align: center;
-				padding: 5em 0 4em 0;
+				padding: 1em 0 1em 0;
 			}
 
 				.main.style3 .content {
@@ -773,6 +773,7 @@
 
 	#one {
 		background-color: #FFF;
+		border-top: thin dotted #EDECE7;
 		/*background: url('images/overlay.png'), url('../images/one.jpg');
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -783,12 +784,20 @@
 		text-align: left;
 	}
 
+	.right_text{
+		text-align: right;
+	}
+
 	.justify_text{
 		text-align:	justify;
 	}
 
 	.interlineado_s{
 		line-height: normal;
+	}
+
+	.interlineado_palabras{
+		line-height: 1.4;
 	}
 
 	.interlineado_m{
@@ -805,7 +814,8 @@
 /*********************************************************************************/
 
 	#two {
-		background-color: #EDECE7;
+		background-color: #FFF;
+		border-top: thin dotted #EDECE7;
 		/*background: url('images/overlay.png'), url('../images/two.jpg');
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -846,6 +856,7 @@
 
 	#work {
 		background-color: #FFF;
+		border-top: thin dotted #EDECE7;
 	}
 
 	#work header{
@@ -912,6 +923,7 @@
 
 	#acuarelas {
 		background-color: #FFF;
+		border-top: thin dotted #EDECE7;
 	}
 
 	.img_peque{
@@ -929,7 +941,8 @@
 /*********************************************************************************/
 
 	#noticias {
-		background-color: #EDECE7;
+		background-color: #FFF;
+		border-top: thin dotted #EDECE7;
 		/*background: url('images/overlay.png'), url('../images/two.jpg');
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
