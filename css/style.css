@@ -835,6 +835,12 @@
 		height: 5em;
 	}
 
+	.img_audio_back{
+		background-image: url('../images/audio/kultxung.jpg');
+		background-repeat: repeat-x;
+		height: 5em;
+	}
+
 
 	.text_gray{
 		color: #AAA;
@@ -935,6 +941,7 @@
 		height: 10em;
 		width: 8em;
 	}
+
 
 /*********************************************************************************/
 /* Noticias                                                                           */
