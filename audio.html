@@ -9,27 +9,43 @@
 		<title>Ecos de las palabras de la Tierra</title>
 
 		<style>
-		p { clear: both; }
+			a { color: #888; text-decoration: none; }
+			ol { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #ccc; width: 100%; border-top: 1px solid #fff; font-size: 0.9em; }
+			ol li { position: relative; margin: 0px; padding: 5px 2px 6px; border-bottom: 1px solid #ccc; cursor: pointer; }
+			ol li a { display: block; text-indent: -3.3ex; padding: 0px 0px 0px 20px; }
+			li.playing { color: #aaa; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); }
+			li.playing a { color: #000; }
+			li.playing:before {
+				content: '♬';
+				width: 14px;
+				height: 14px;
+				padding: 3px;
+				line-height: 14px;
+				margin: 0px;
+				position: absolute;
+				left: -24px;
+				top: 9px;
+				color: #000;
+				font-size: 13px;
+				text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+			}
 
-		.audiojs { height: 22px; background: #404040;
-			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bbb), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));
-			background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);
-			-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-			-o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
-		}
-		.audiojs .play-pause { width: 20px; height: 20px; padding: 0px 8px 0px 0px; }
-		.audiojs p { width: 25px; height: 20px; margin: -3px 0px 0px -1px; }
-		.audiojs .scrubber { background: #5a5a5a; width: 310px; height: 10px; margin: 5px; }
-		.audiojs .progress { height: 10px; width: 0px; background: #ccc;
-			background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
-				background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%);
-		}
-		.audiojs .loaded { height: 10px; background: #000;
-				background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
-				background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%);
-		}
-		.audiojs .time { float: left; height: 25px; line-height: 25px; }
-		.audiojs .error-message { height: 24px;line-height: 24px; }
+			#shortcuts {
+				width: 100%;
+				color: #666;
+				font-size: 0.9em;
+				margin: 10px 0px 0px;
+				padding: 10px 20px 10px;
+				background: #f3f3f3;
+				background: rgba(240, 240, 240, 0.7);
+			}
+			#shortcuts div { width: 100%; margin: 0px auto; }
+			#shortcuts h3 { margin: 0px 0px 6px; }
+			#shortcuts p { margin: 0px 0px 5px; }
+			#shortcuts em { font-style: normal; background: #d3d3d3; padding: 3px 9px; position: relative; left: -3px;
+				-webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;
+				-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); -o-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+
 		</style>
 
 
@@ -53,42 +69,78 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 		<script>
-			audiojs.events.ready(function() {
-				//var as = audiojs.createAll();
-				var audios = document.getElementsByTagName('audio');
-				var player1 = audiojs.create( audios[0], {
-					play: function() {
+		$(function() {
+
+			function changeimage(audio){
+				switch(audio) {
+					case "http://vitocosan.github.io/BookSite/demo/mp3/1.mp3":
 						$("#box_image").attr("src","images/audio/1.jpg");
-					},
-					pause: function() {
-						$("#box_image").attr("src","images/audio/wallmapu.jpg");
-					}
-				});
-				var player2 = audiojs.create( audios[1], {
-					play: function() {
+						break;
+					case "http://vitocosan.github.io/BookSite/demo/mp3/2.mp3":
 						$("#box_image").attr("src","images/audio/2.jpg");
-					},
-					pause: function() {
-						$("#box_image").attr("src","images/audio/wallmapu.jpg");
-					}
-				});
-				var player3 = audiojs.create( audios[2], {
-					play: function() {
+						break;
+					case "http://vitocosan.github.io/BookSite/demo/mp3/3.mp3":
 						$("#box_image").attr("src","images/audio/3.jpg");
-					},
-					pause: function() {
-						$("#box_image").attr("src","images/audio/wallmapu.jpg");
-					}
-				});
-				var player4 = audiojs.create( audios[3], {
-					play: function() {
+						break;
+					case "http://vitocosan.github.io/BookSite/demo/mp3/4.mp3":
 						$("#box_image").attr("src","images/audio/4.jpg");
-					},
-					pause: function() {
+						break;
+					default:
 						$("#box_image").attr("src","images/audio/wallmapu.jpg");
-					}
-				});
+				}
+			};
+
+			// Setup the player to autoplay the next track
+			var a = audiojs.createAll({
+				trackEnded: function() {
+					var next = $('ol li.playing').next();
+					if (!next.length) next = $('ol li').first();
+					next.addClass('playing').siblings().removeClass('playing');
+					audio.load($('a', next).attr('data-src'));
+					audio.play();
+					changeimage(a[0].mp3);
+				}
 			});
+
+			// Load in the first track
+			var audio = a[0];
+			first = $('ol a').attr('data-src');
+			$('ol li').first().addClass('playing');
+			audio.load(first);
+
+			// Load in a track on click
+			$('ol li').click(function(e) {
+				e.preventDefault();
+				$(this).addClass('playing').siblings().removeClass('playing');
+				audio.load($('a', this).attr('data-src'));
+				audio.play();
+				changeimage(a[0].mp3);
+			});
+			// Keyboard shortcuts
+			$(document).keydown(function(e) {
+				var unicode = e.charCode ? e.charCode : e.keyCode;
+				// right arrow
+				if (unicode == 39) {
+					var next = $('li.playing').next();
+					if (!next.length) next = $('ol li').first();
+					next.click();
+					changeimage(a[0].mp3);
+					// back arrow
+				} else if (unicode == 37) {
+					var prev = $('li.playing').prev();
+					if (!prev.length) prev = $('ol li').last();
+					prev.click();
+					changeimage(a[0].mp3);
+					// spacebar
+				} else if (unicode == 32) {
+					audio.playPause();
+					if (audio.playing)
+					changeimage(a[0].mp3);
+					else
+						changeimage("default");
+				}
+			})
+		});
 
 		</script>
 
@@ -118,20 +170,29 @@
 					</header>
 					<div class="row">
 						<div class="6u left_text">
-							<h3 class="text_gray">Pistas</h3>
-							<br />
-							<ul>
-								<li>Awkiñ üñüm<audio src="mp3/1.mp3" preload="auto" /></li>
-								<li>Awkiñ Ko<audio src="mp3/2.mp3" preload="auto" /></li>
-								<li>Awkiñ kürüb<audio src="mp3/3.mp3" preload="auto" /></li>
-								<li>Awkiñ txalkan<audio src="mp3/4.mp3" preload="auto" /></li>
-							</ul>
+							<div id="wrapper">
+								<h1 class="text_gray">Pistas</h1>
+								<audio preload></audio>
+								<ol>
+									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/1.mp3">Awkiñ üñüm</a></li>
+									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/2.mp3">Awkiñ Ko</a></li>
+									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/3.mp3">Awkiñ kürüb</a></li>
+									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/4.mp3">Awkiñ txalkan</a></li>
+								</ol>
+							</div>
+							<div id="shortcuts">
+								<div>
+									<h3>Atajos de teclado:</h3>
+									<p><em>&rarr;</em> Pista siguiente</p>
+									<p><em>&larr;</em> Pista anterior</p>
+									<p><em>Space</em> Play/pausa</p>
+								</div>
+							</div>
 						</div>
 						<div class="6u">
 							<img src="images/audio/wallmapu.jpg" class="img_audio" id="box_image" />
 						</div>
 					</div>
-					<br /><br />
 					<div class="row">
 						<div class="2u -5u">
 							<div class=" 12u$ img_audio_back"></div>
@@ -139,26 +200,12 @@
 					</div>
 				</div>
 			</section>
-			<br /><br /><br />
-
 		<!-- Footer -->
 			<footer id="footer">
-
-				<!-- Icons
-					<ul class="actions">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-					</ul>
-				-->
 				<!-- Menu -->
 					<ul class="menu">
 						<li>&copy; vitocosan</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
-
 			</footer>
 
 	</body>
