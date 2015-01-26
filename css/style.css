@@ -880,8 +880,8 @@
 	}
 
 	.img_audio_back{
-		background-image: url('../images/audio/kultxung.jpg');
-		background-repeat: repeat-x;
+		background-image: url('../images/audio/kultxung_gris.png');
+		background-repeat: no-repeat;
 		height: 5em;
 	}
 
