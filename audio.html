@@ -85,8 +85,11 @@
 					case "http://vitocosan.github.io/BookSite/demo/mp3/4.mp3":
 						$("#box_image").attr("src","images/audio/4.jpg");
 						break;
+					case "http://vitocosan.github.io/BookSite/demo/mp3/5.mp3":
+						$("#box_image").attr("src","images/audio/5.jpg");
+						break;
 					default:
-						$("#box_image").attr("src","images/audio/wallmapu.jpg");
+						$("#box_image").attr("src","images/audio/pause.png");
 				}
 			};
 
@@ -107,6 +110,7 @@
 			first = $('ol a').attr('data-src');
 			$('ol li').first().addClass('playing');
 			audio.load(first);
+			changeimage(a[0].mp3);
 
 			// Load in a track on click
 			$('ol li').click(function(e) {
@@ -134,10 +138,12 @@
 					// spacebar
 				} else if (unicode == 32) {
 					audio.playPause();
-					if (audio.playing)
-					changeimage(a[0].mp3);
-					else
+					if (audio.playing){
+						changeimage(a[0].mp3);
+					}
+					else{
 						changeimage("default");
+					}
 				}
 			})
 		});
@@ -166,7 +172,7 @@
 			<section id="one" class="main style4 primary">
 				<div class="content container">
 					<header>
-						<h2>AUDIOS</h2>
+						<h2>Audios (CD)</h2>
 					</header>
 					<div class="row">
 						<div class="6u left_text">
@@ -178,6 +184,7 @@
 									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/2.mp3">Awkiñ Ko</a></li>
 									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/3.mp3">Awkiñ kürüb</a></li>
 									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/4.mp3">Awkiñ txalkan</a></li>
+									<li><a href="#" data-src="http://vitocosan.github.io/BookSite/demo/mp3/5.mp3">Awkiñ wall mapu</a></li>
 								</ol>
 							</div>
 							<div id="shortcuts">
