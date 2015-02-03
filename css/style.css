@@ -648,14 +648,14 @@
 
 			.main.style4 {
 					text-align: center;
-					padding: 2em 0 2em 0;
+					padding: 0.5em 0 0.5em 0;
 				}
 
 				.main.style4 .content {
 				}
 
 				.main.style4 .content > header {
-					margin-bottom: 2em;
+					margin-bottom: 0.5em;
 				}
 
 				.main.style4.primary {
@@ -841,11 +841,15 @@
 	}
 
 	.interlineado_palabras{
-		line-height: 1.4;
+		line-height: 1.2;
 	}
 
 	.interlineado_m{
 		line-height: 1.6;
+	}
+
+	.interlineado_indice{
+		line-height: 1.3;
 	}
 
 	.img_audio{
@@ -874,15 +878,15 @@
 	}
 
 	.img_indice{
-		background-image: url('../images/contenido/motifs.png');
+		background-image: url('../images/contenido/motifs_p.png');
 		background-repeat: repeat-x;
-		height: 5em;
+		height: 3em;
 	}
 
 	.img_audio_back{
 		background-image: url('../images/audio/kultxung_gris.png');
 		background-repeat: no-repeat;
-		height: 5em;
+		height: 3.8em;
 	}
 
 

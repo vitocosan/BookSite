@@ -10,7 +10,7 @@
 
 		// Fullscreen?
 			fullScreen: true,
-			
+
 		// Section Transitions?
 			sectionTransitions: true,
 
@@ -25,13 +25,14 @@
 			'max': { range: '*', href: 'css/style.css', containers: 1440, viewport: { scalable: false }, grid: { gutters: 40 } },
 			'wide': { range: '-1920', href: 'css/style-wide.css', containers: 1360 },
 			'normal': { range: '-1680', href: 'css/style-normal.css', containers: 1200 },
+			'marga': { range: '-1366', href: 'css/style-marga.css', containers: 1200 },
 			'narrow': { range: '-1280', href: 'css/style-narrow.css', containers: 960 },
 			'narrower': { range: '-1000', href: 'css/style-narrower.css', containers: '95%' },
 			'mobile': { range: '-736', href: 'css/style-mobile.css', grid: { gutters: 20 } },
 			'mobile-narrow': { range: '-480', containers: '95%!', grid: { collapse: true } }
 		}
 	});
-	
+
 	$(function() {
 
 		var	$window = $(window),
@@ -41,31 +42,31 @@
 			sectionTransitionState = false;
 
 		// Settings.
-		
+
 			// IE<10?
 				if (skel.vars.IEVersion < 10) {
-					
+
 					// Turn off transitions.
 						settings.sectionTransitions = false;
-						
+
 				}
-		
+
 			// Touch?
 				if (skel.vars.isMobile) {
-				
+
 					// Disable section transitions
 						settings.sectionTransitions = false;
-						
+
 					// Turn on touch mode
 						$body.addClass('touch');
-				
+
 				}
-				
+
 		// Fade in once everything's loaded.
 			$all
 				.addClass('is-loading')
 				.fadeTo(0, 0.0001);
-			
+
 			$window.load(function() {
 				window.setTimeout(function() {
 					$all
@@ -98,7 +99,7 @@
 						})
 						.on('blur', function() {
 							$(this).parent().removeClass('focus');
-						});						
+						});
 
 			}
 
@@ -143,7 +144,7 @@
 							on:			function(t) { t.removeClass('inactive'); },
 							off:		function(t) { t.addClass('inactive'); }
 						});
-			
+
 				// Work.
 					$('#work')
 						.scrollwatch({
@@ -155,7 +156,7 @@
 											var	rows = t.find('.row.images'),
 												length = rows.length,
 												n = 0;
-											
+
 											rows.each(function() {
 												var row = $(this);
 												window.setTimeout(function() {
@@ -167,7 +168,7 @@
 											var	rows = t.find('.row.images'),
 												length = rows.length,
 												n = 0;
-											
+
 											rows.each(function() {
 												var row = $(this);
 												window.setTimeout(function() {
@@ -191,7 +192,7 @@
 			}
 
 		// Events.
-		
+
 			// Change (skel).
 				skel.change(function() {
 
@@ -200,10 +201,10 @@
 							$body.addClass('touch');
 						else if (!skel.vars.isMobile)
 							$body.removeClass('touch');
-				
+
 					// Section transitions.
 						if (settings.sectionTransitions) {
-						
+
 							window.setTimeout(function() {
 
 								if (skel.isActive('mobile')) {
@@ -211,10 +212,10 @@
 									// Generic sections.
 										$('.main.style1')
 											.scrollwatchSuspend();
-										
+
 										$('.main.style2')
 											.scrollwatchSuspend();
-								
+
 									// Work.
 										$('#work')
 											.scrollwatchSuspend();
@@ -222,17 +223,17 @@
 									// Contact.
 										$('#contact')
 											.scrollwatchSuspend();
-								
+
 								}
 								else {
 
 									// Generic sections.
 										$('.main.style1')
 											.scrollwatchResume();
-										
+
 										$('.main.style2')
 											.scrollwatchResume();
-								
+
 									// Work.
 										$('#work')
 											.scrollwatchResume();
@@ -242,16 +243,16 @@
 											.scrollwatchResume();
 
 								}
-								
+
 							}, 0);
 
 						}
-					
+
 				});
 
 			// Resize.
 				var resizeTimeout, resizeScrollTimeout;
-				
+
 				$window.resize(function() {
 
 					// Disable animations/transitions.
@@ -268,7 +269,7 @@
 							if (settings.fullScreen
 							&&	!skel.isActive('mobile')) {
 								$('.fullscreen').each(function() {
-								
+
 									var $t = $(this),
 										$c = $t.children('.content'),
 										x = Math.max(100, Math.round(($window.height() - $c.outerHeight() - $header.outerHeight()) / 2) + 1);
@@ -276,15 +277,15 @@
 									$t
 										.css('padding-top', x)
 										.css('padding-bottom', x);
-								
+
 								});
 							}
 							else
 								$('.fullscreen')
 									.css('padding-top', '')
 									.css('padding-bottom', '');
-							
-							
+
+
 						// Re-enable animations/transitions.
 							window.setTimeout(function() {
 								$body.removeClass('is-loading');
@@ -294,16 +295,16 @@
 					}, 100);
 
 				});
-				
+
 		// Trigger events on load.
 			$window.load(function() {
-				
+
 				$window
 					.trigger('resize')
 					.trigger('scroll');
-			
+
 			});
 
 	});
-	
+
 })(jQuery);
