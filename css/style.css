@@ -765,10 +765,13 @@
 		top: 0;
 		width: 100%;
 		background: #fff;
-		background: rgba(255,255,255,0.95);
+		/*background: rgba(255,255,255,0.95);*/
 		height: 3em;
 		line-height: 3em;
 		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
+		background: url('../images/bkg_header.png');
+		background-size: 100% 100%;
+		background-repeat: repeat, no-repeat;
 	}
 
 	body {
@@ -846,10 +849,10 @@
 /*********************************************************************************/
 
 	#intro {
-		background: url('images/overlay.png'), url('../images/acuarelas/portada.jpg');
+		background: url('images/overlay.png'), url('../images/bkg_home.png');
 		background-size: 100% 100%;
-		background-attachment: fixed, fixed;
-		background-position: top left, bottom center;
+		/*background-attachment: fixed, fixed;
+		background-position: top left, bottom center;*/
 		background-repeat: repeat, no-repeat;
 	}
 
