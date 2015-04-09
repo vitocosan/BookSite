@@ -110,15 +110,18 @@
 		// Gallery.
 			$('.gallery').poptrox({
 				baseZIndex: 10001,
-				useBodyOverflow: false,
-				usePopupEasyClose: false,
+				useBodyOverflow: true,
+				usePopupEasyClose: true,
+				usePopupForceClose: true,
+				usePopupCloser: true,
+				usePopupLoader: false,
 				overlayColor: '#1f2328',
 				overlayOpacity: 0.65,
-				usePopupDefaultStyling: false,
+				usePopupDefaultStyling: true,
 				usePopupCaption: true,
 				popupLoaderText: '',
 				windowMargin: (skel.isActive('mobile') ? 5 : 50),
-				usePopupNav: true
+				usePopupNav: false
 			});
 
 		// Section transitions.
