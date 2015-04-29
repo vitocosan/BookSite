@@ -3,6 +3,15 @@
 phpinfo();
 */
 
+function redirect($url)
+{
+    $string = '<script type="text/javascript">';
+    $string .= 'window.location = "' . $url . '"';
+    $string .= '</script>';
+
+    echo $string;
+};
+
 $name = strip_tags($_POST['name']);
 $email = strip_tags($_POST['email']);
 $message = strip_tags($_POST['message']);
@@ -15,8 +24,8 @@ $textoEmisor .= "Content-type: text/html; charset=UTF-8\r\n";
 $textoEmisor .= "From: ecosdelaspalabrasdelatierra.cl";
 
 //Correo de destino; donde se enviará el correo.
-$correoDestino = "margaritareyes@gmail.com,freddynps@gmail.com,vitocosan@gmail.com";
-
+$correoDestino = "margaritareyes@gmail.com,freddynps@gmail.com,libkolewbu@yahoo.es";
+//$correoDestino = "vitocosan@gmail.com";
 
 //Formateo el asunto del correo
 $asunto = "Contacto Sitio Ecos de las Palabras de la Tierra";
@@ -34,7 +43,15 @@ $cuerpo .= "<b>Fecha: </b>" . $fechaFormateada . "<br />";
 // Envío el mensaje
 mail( $correoDestino, $asunto, $cuerpo, $textoEmisor);
 
-header("Location: http://ecosdelaspalabrasdelatierra.cl");
-exit;
+if(headers_sent()){
+    // las cabeceras ya se han enviado, no intentar añadir una nueva
+	redirect("http://ecosdelaspalabrasdelatierra.cl");
+}
+else{
+    // es posible añadir nuevas cabeceras HTTP
+	header("Location: http://ecosdelaspalabrasdelatierra.cl");
+}
+
+exit();
 
 ?>

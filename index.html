@@ -37,6 +37,23 @@
 				  pagerCustom: '#bx-pager',
 				  controls: false
 				});
+
+				$('#correo').validate({ // initialize the plugin
+						rules: {
+								name: {
+										required: true,
+										minlength: 1
+								},
+								email: {
+										required: true,
+										email: true
+								},
+								message: {
+										required: true,
+										minlength: 1
+								}
+						}
+				});
 			});
 		</script>
 
@@ -304,7 +321,7 @@
 							<p>Si deseas contactarte con nosotros u obtener el libro, escríbenos aquí:</p>
 							<div class="box container 50%">
 							<!-- Contact Form -->
-									<form method="post" action="php/mail.php">
+									<form id="correo" method="post" action="php/mail.php">
 										<div class="row 50%">
 											<div class="6u"><input type="text" name="name" placeholder="Nombre y Apellido" /></div>
 											<div class="6u"><input type="email" name="email" placeholder="Email" /></div>
