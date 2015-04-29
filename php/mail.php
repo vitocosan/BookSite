@@ -24,8 +24,8 @@ $textoEmisor .= "Content-type: text/html; charset=UTF-8\r\n";
 $textoEmisor .= "From: ecosdelaspalabrasdelatierra.cl";
 
 //Correo de destino; donde se enviará el correo.
-//$correoDestino = "margaritareyes@gmail.com,freddynps@gmail.com,libkolewbu@yahoo.es";
-$correoDestino = "vitocosan@gmail.com";
+$correoDestino = "margaritareyes@gmail.com,freddynps@gmail.com,libkolewbu@yahoo.es";
+//$correoDestino = "vitocosan@gmail.com";
 
 //Formateo el asunto del correo
 $asunto = "Contacto Sitio Ecos de las Palabras de la Tierra";
