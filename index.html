@@ -15,6 +15,7 @@
 		<script src="js/jquery.poptrox.min.js"></script>
 		<script src="js/jquery.scrolly.min.js"></script>
 		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/init.js"></script>
 
@@ -52,6 +53,18 @@
 										required: true,
 										minlength: 1
 								}
+						},
+						messages: {
+							name: {
+								required: "Campo obligatorio!"
+							},
+							email: {
+								required: "Campo obligatorio!",
+								email: "Ingrese un email valido!"
+							},
+							message: {
+								required: "Un mensaje es requerido!"
+							}
 						}
 				});
 			});
